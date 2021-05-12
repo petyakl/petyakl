@@ -31,11 +31,9 @@ int main()
         cout<<"min=";cin>>n;
         cout<<"max=";cin>>m;
     }
-    int num = rand() % m + n; 
+    int num = rand() % (m-n+1) + n; 
     // random number between 1 and 100
     cout << "Guess My Number Game\n\n";
-    while (num>m)
-    num= num%m+n;
     //извежда на в програмата "Guess My Number Game\n\n"
     int br=0;
 
