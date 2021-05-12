@@ -36,11 +36,9 @@ int main()
         cout<<"For this program the min must be different from 0";
         cin>>n;
     }
-    int num = rand() % m + n; 
+    int num = rand() % (m-n+1) + n; 
     // random number between 1 and 100
     cout << "Guess My Number Game\n\n";
-    while (num>m)
-    num= num%m+n;
     //извежда на в програмата "Guess My Number Game\n\n"
     int guess = 0;
     //запазва се място за въвеждане на стойност на променлива с име guess и автоматично и се дава стойност 0;
