@@ -6,12 +6,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 *******************************************************************************/
 
-/*************************************************************************** 
-Проблема в кода е че започва да променя отделните цифри на въведеното число.
 
-
-
-*******************************************************************************/
 
 #include <iostream>
 #include <cstdlib>
@@ -19,6 +14,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include <algorithm>// random_shuffle
 #include <bits/stdc++.h>
 using namespace std;
+
 
 int main() 
 {
@@ -48,7 +44,7 @@ int main()
     int brtrys=1;
     int guess;
     cout<<"Your guess is: ";cin>>guess;
-    char p='p';
+   
    
     while(guess!=number)
     {
@@ -60,6 +56,13 @@ int main()
         g[1]=guess/10%10;
         g[2]=guess/100%10;
         g[3]=guess/1000%10;
+        
+        if(guess==0000)
+        {
+            cout<<"You choose to give up. The number you were looking for is:"<<number;
+            break;
+            
+        }
         
         for(int i=0; i<4; i++)
         {
@@ -94,12 +97,7 @@ int main()
             flag=true;
             break;
         }
-        if(guess==0000)
-        {
-            cout<<"You choose to give up. The number you were looking for is:"<<number;
-            break;
-            
-        }
+    
         
         if(guess==5555)
         {
@@ -113,6 +111,75 @@ int main()
     
     if(flag==true)
   cout<<"You guessed the number!";
+  cout<<endl<<"Now as a reward you can strike some lightning. All you have to do is choose how big are they going to be, with what are they going to be made and witch direction should they point('/';'|')";
 
-return 0;
+  int l; 
+  char f; 
+  char b;
+  cout<<"Number of lines:"; cin>>l;
+  cout<<"Simbols:"; cin>>f;
+  cout<<"Turn:"; cin>>b;
+  
+  if(b=='/')
+  {
+  for(int i=0; i<l/2; i++)
+  {
+      for(int k=l/2; k>i; k--)
+      {
+          cout<<" ";
+      }
+      cout<<f;
+      cout<<endl;
+  };
+  
+    for(int j=0; j<=l/2; j++)
+    {
+        cout<<f;
+    };
+    cout<<endl;
+    for(int i=0; i<l/2; i++)
+  {
+      for(int k=i; k<l/2-1; k++)
+      {
+          cout<<" ";
+      }
+      cout<<f;
+      cout<<endl;
+  };
+  }
+  
+  if(b=='|')
+ {
+     
+     for(int i=0; i<l/2; i++)
+  {
+     
+      for(int k=0; k<i; k++)
+      {
+          cout<<" ";
+      }
+      cout<<f;
+      cout<<endl;
+  };
+    for(int j=0; j<=l/2; j++)
+    {
+        cout<<f;
+    };
+    cout<<endl;
+    for(int i=0; i<l/2; i++)
+  {
+      for(int k=0; k<i+1; k++)
+      {
+          cout<<" ";
+      }
+      cout<<f;
+      cout<<endl;
+  };
+    
+    
+    
+       
+ };  
+ 
+  return 0;  
 }
